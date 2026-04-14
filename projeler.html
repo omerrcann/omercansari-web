@@ -89,7 +89,6 @@
                     <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: PostgreSQL, SQL, Matplotlib</small>
                 </div>
 
-
             </div>
         </div>
     </div>
@@ -99,7 +98,6 @@
         const expandedImg = document.getElementById("expandedImg");
         const images = document.querySelectorAll(".project-img");
 
-        // Her görsele tıklanma özelliği ekle
         images.forEach(img => {
             img.onclick = function() {
                 modal.style.display = "flex";
@@ -107,17 +105,18 @@
             }
         });
 
-        // Çarpı butonuna basınca kapat
         function closeModal() {
             modal.style.display = "none";
         }
 
-        // Resmin dışındaki karanlık alana tıklayınca da kapat
         modal.onclick = function(e) {
             if (e.target === modal) {
                 closeModal();
             }
         }
     </script>
+
+    <script src="asistan.js"></script>
+
 </body>
 </html>
