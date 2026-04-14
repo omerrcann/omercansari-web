@@ -18,10 +18,25 @@
         @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
         .back-btn { display: inline-block; margin-bottom: 30px; padding: 10px 20px; background: rgba(0, 247, 255, 0.1); border: 1px solid #00f7ff; color: #00f7ff; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
         .back-btn:hover { background: #00f7ff; color: #000; box-shadow: 0 0 10px #00f7ff; }
-        .project-img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; border: 1px solid rgba(0,247,255,0.3); }
+
+        /* GÖRSEL BÜYÜTME (LIGHTBOX) CSS AYARLARI */
+        .project-img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; border: 1px solid rgba(0,247,255,0.3); cursor: pointer; transition: 0.3s; }
+        .project-img:hover { transform: scale(1.03); border-color: #00f7ff; box-shadow: 0 0 15px rgba(0, 247, 255, 0.3); }
+
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(2, 12, 27, 0.85); backdrop-filter: blur(8px); justify-content: center; align-items: center; }
+        .modal-content { max-width: 90%; max-height: 90%; border: 2px solid #00f7ff; box-shadow: 0 0 40px rgba(0, 247, 255, 0.4); border-radius: 10px; animation: zoomIn 0.3s ease; }
+        .close-modal { position: absolute; top: 20px; right: 40px; color: #00f7ff; font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .close-modal:hover { color: #ff0055; text-shadow: 0 0 15px #ff0055; }
+        @keyframes zoomIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
     </style>
 </head>
 <body>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="expandedImg">
+    </div>
+
     <div class="container">
         <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> ANA SAYFAYA DÖN</a>
 
@@ -48,6 +63,24 @@
                 </div>
 
                 <div class="project-card">
+                    <img src="images/restoran.png" alt="Restoran Yönetim Sistemi" class="project-img">
+                    <div>
+                        <h3>Restoran Yönetimi <span class="badge">C++ / OOP</span></h3>
+                        <p style="color: #fff;">C++ dilini ve Nesne Yönelimli Programlama (OOP) mantığını pekiştirmek amacıyla geliştirdiğim, terminal üzerinden çalışan bir simülasyon. Görsel bir arayüz yerine; sipariş alma, masa takibi ve hesap hesaplama gibi süreçlerin arka plandaki algoritmik akışına odaklandım. Bir İşletmenin veri yönetiminin kod tarafında nasıl işlediğini anlamamı sağlayan temel bir çalışma.</p>
+                    </div>
+                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: C++, OOP ve Veri Yapıları</small>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/kutuphane.png" alt="Kütüphane Yönetim Sistemi" class="project-img">
+                    <div>
+                        <h3>Kütüphane Yönetimi <span class="badge">C++ / OOP</span></h3>
+                        <p style="color: #fff;">Veri ekleme, silme ve düzenleme (CRUD) işlemlerinin mantığını kavramak için geliştirdiğim, metin tabanlı bir kütüphane asistanı. Kitap kaydı, ödünç alma ve iade gibi süreçleri yöneten bu projede; verilerin hafızada nasıl tutulduğunu ve işlendiğini deneyimlemeye çalıştım. Grafiksel butonlar olmadan, saf kod mantığıyla çalışan bir yönetim sistemi denemesi.</p>
+                    </div>
+                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: C++, OOP ve Veri Yapıları</small>
+                </div>
+
+                <div class="project-card">
                     <img src="images/e-ticaret.png" alt="ETicaretDB" class="project-img">
                     <div>
                         <h3>ETicaretDB & Analiz <span class="badge">VERİ TABANI</span></h3>
@@ -60,5 +93,31 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const expandedImg = document.getElementById("expandedImg");
+        const images = document.querySelectorAll(".project-img");
+
+        // Her görsele tıklanma özelliği ekle
+        images.forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "flex";
+                expandedImg.src = this.src;
+            }
+        });
+
+        // Çarpı butonuna basınca kapat
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Resmin dışındaki karanlık alana tıklayınca da kapat
+        modal.onclick = function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
