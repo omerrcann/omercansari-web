@@ -55,7 +55,7 @@ const widgetHTML = `
 document.body.insertAdjacentHTML('beforeend', widgetHTML);
 
 // --- MANTIKSAL İŞLEMLER VE FONKSİYONLAR ---
-const linkedinURL = "https://linkedin.com/in/omerrcann";
+const linkedinURL = "www.linkedin.com/in/ömercan28";
 const githubURL = "https://github.com/omerrcann";
 
 function toggleChat() {
