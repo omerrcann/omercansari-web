@@ -16,8 +16,8 @@
         body { background-color: #020c1b; color: #00f7ff; font-family: 'Orbitron', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background-color: #020c1b; }
         nav { background: rgba(2, 12, 27, 0.9); border-bottom: 1px solid #00f7ff; padding: 15px 0; position: sticky; top: 0; z-index: 1000; text-align: center; backdrop-filter: blur(5px); }
-        nav a { color: #00f7ff; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1em; transition: 0.3s; }
-        nav a:hover { text-shadow: 0 0 10px #00f7ff; color: #fff; }
+        nav a { color: #00f7ff; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 1em; transition: 0.3s; padding: 10px; }
+        nav a:hover { text-shadow: 0 0 10px #00f7ff; color: #fff; background: rgba(0, 247, 255, 0.1); border-radius: 5px; }
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; }
         .hud-panel { border: 1px solid #00f7ff; background: rgba(0, 20, 40, 0.8); padding: 30px; margin-bottom: 40px; box-shadow: 0 0 15px rgba(0, 247, 255, 0.05); position: relative; transform-style: preserve-3d; perspective: 1000px; }
         .hud-panel::before { content: ''; position: absolute; top: -1px; left: -1px; width: 10px; height: 10px; border-top: 3px solid #00f7ff; border-left: 3px solid #00f7ff; }
@@ -33,6 +33,18 @@
         .contact-btn { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 2px solid #00f7ff; color: #00f7ff; text-decoration: none; margin: 10px; font-size: 1.5em; transition: all 0.3s ease; background: rgba(0, 20, 40, 0.8); border-radius: 50%; }
         .contact-btn:hover { transform: translateY(-5px) scale(1.1); color: #fff; box-shadow: 0 0 20px #00f7ff; background: #00f7ff; }
         .chart-container { position: relative; height: 350px; width: 100%; max-width: 600px; margin: 0 auto; }
+
+        /* ÖZGEÇMİŞ TIMELINE CSS */
+        .timeline-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+        @media (max-width: 768px) { .timeline-container { grid-template-columns: 1fr; gap: 20px; } }
+        .timeline-section h3 { color: #fff; border-bottom: 1px solid rgba(0, 247, 255, 0.3); padding-bottom: 10px; margin-top: 0; }
+        .timeline-item { border-left: 2px solid rgba(0, 247, 255, 0.5); padding-left: 20px; margin-bottom: 25px; position: relative; transition: 0.3s; }
+        .timeline-item:hover { border-left-color: #00f7ff; }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 0; width: 10px; height: 10px; background: #020c1b; border: 2px solid #00f7ff; border-radius: 50%; transition: 0.3s; }
+        .timeline-item:hover::before { background: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
+        .timeline-item h4 { margin: 0; color: #00f7ff; font-size: 1.1em; }
+        .timeline-item .role { color: #fff; font-size: 0.95em; margin: 5px 0; font-family: 'Roboto', sans-serif; }
+        .timeline-item .date { color: rgba(0,247,255,0.6); font-size: 0.85em; font-family: 'Roboto', sans-serif; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -41,16 +53,17 @@
 
     <nav>
         <a href="#home">ANA SAYFA</a>
-        <a style="padding : 20px" href="#about">HAKKIMDA</a>
+        <a href="#about">HAKKIMDA</a>
         <a href="#skills">YETENEKLER</a>
-        <a style="padding : 20px"  href="#projects">PROJELER</a>
+        <a href="#resume">ÖZGEÇMİŞ</a>
+        <a href="#projects">PROJELER</a>
         <a href="#references">REFERANSLAR</a>
-        <a style="padding : 20px"  href="#contact">İLETİŞİM</a>
+        <a href="#contact">İLETİŞİM</a>
     </nav>
 
     <div class="container" id="home">
 
-<header>
+        <header>
             <div style="color: #0f0; font-size: 0.9em; margin-bottom: 15px;">SYSTEM STATUS: ONLINE</div>
 
             <div style="margin-bottom: 20px;">
@@ -80,7 +93,52 @@
             </div>
         </section>
 
-<main id="projects" class="hud-panel">
+        <section id="resume" class="hud-panel">
+            <h2>>> EĞİTİM & DENEYİM</h2>
+            <div class="timeline-container">
+
+                <div class="timeline-section">
+                    <h3><i class="fas fa-graduation-cap" style="color: #00f7ff; margin-right: 10px;"></i>EĞİTİM</h3>
+
+                    <div class="timeline-item">
+                        <h4>Karadeniz Teknik Üniversitesi</h4>
+                        <div class="role">İstatistik ve Bilgisayar Bilimleri (Lisans)</div>
+                        <div class="date"><i class="far fa-calendar-alt"></i> 2022 - Halen</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Hazar Koleji Anadolu Lisesi</h4>
+                        <div class="role">Lise Eğitimi</div>
+                        <div class="date"><i class="far fa-calendar-alt"></i> 2018 - 2020</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Bahçeşehir Atatürk Anadolu Lisesi</h4>
+                        <div class="role">Lise Eğitimi</div>
+                        <div class="date"><i class="far fa-calendar-alt"></i> 2016 - 2018</div>
+                    </div>
+                </div>
+
+                <div class="timeline-section">
+                    <h3><i class="fas fa-briefcase" style="color: #00f7ff; margin-right: 10px;"></i>DENEYİM</h3>
+
+                    <div class="timeline-item">
+                        <h4>Öğrenci Asistan (İŞKUR Gençlik Programı)</h4>
+                        <div class="role">Karadeniz Teknik Üniversitesi</div>
+                        <div class="date"><i class="far fa-calendar-alt"></i> 2025 Kasım - Halen</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Bilgi Teknolojileri Stajyeri</h4>
+                        <div class="role">TNCGROUP</div>
+                        <div class="date"><i class="far fa-calendar-alt"></i> 2025 - Ağustos</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <main id="projects" class="hud-panel">
             <h2 style="color:#00f7ff; border-bottom: 1px dashed #00f7ff; padding-bottom:10px;">>> ÖNE ÇIKAN PROJELER </h2>
 
             <div class="projects-row">
@@ -132,7 +190,7 @@
             <p style="margin-bottom: 20px;">Frekansları açtım, sinyal bekliyorum.</p>
             <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
                 <a href="mailto:sarmercan6@gmail.com" class="contact-btn" title="E-Posta Gönder"><i class="fas fa-envelope"></i></a>
-                <a href="www.linkedin.com/in/ömercan28" target="_blank" class="contact-btn" title="LinkedIn Profili"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/ömercan28" target="_blank" class="contact-btn" title="LinkedIn Profili"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/omerrcann" target="_blank" class="contact-btn" title="GitHub Profili"><i class="fab fa-github"></i></a>
             </div>
         </section>
@@ -176,4 +234,6 @@
         VanillaTilt.init(document.querySelectorAll(".project-card"), { max: 15, speed: 400, glare: true, "max-glare": 0.3, scale: 1.02 });
     </script>
 
-<script src="asistan.js"></script>
+    <script src="asistan.js"></script>
+</body>
+</html>
