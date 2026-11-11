@@ -1,151 +1,149 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÖMER CAN SARI | Tüm Projeler</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { background-color: #020c1b; color: #00f7ff; font-family: 'Orbitron', sans-serif; margin: 0; padding: 0; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        .hud-panel { border: 1px solid #00f7ff; background: rgba(0, 20, 40, 0.8); padding: 30px; margin-bottom: 40px; box-shadow: 0 0 15px rgba(0, 247, 255, 0.05); position: relative; }
-        h1 { text-align: center; font-size: 2.5em; text-shadow: 0 0 20px #00f7ff; letter-spacing: 2px; border-bottom: 1px dashed #00f7ff; padding-bottom: 20px; margin-bottom: 40px; margin-top: 0;}
-        .project-card { background: rgba(0, 20, 40, 0.6); border: 1px solid rgba(0, 247, 255, 0.3); padding: 20px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0, 247, 255, 0.1); display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 247, 255, 0.2); border-color: #00f7ff; }
-        .badge { background: #00f7ff; color: #000; padding: 2px 8px; font-weight: bold; font-size: 0.8em; margin-left: 10px; border-radius: 4px;}
-        .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
-        .back-btn { display: inline-block; margin-bottom: 30px; padding: 10px 20px; background: rgba(0, 247, 255, 0.1); border: 1px solid #00f7ff; color: #00f7ff; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
-        .back-btn:hover { background: #00f7ff; color: #000; box-shadow: 0 0 10px #00f7ff; }
-
-        .project-img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; border: 1px solid rgba(0,247,255,0.3); cursor: pointer; transition: 0.3s; }
-        .project-img:hover { transform: scale(1.03); border-color: #00f7ff; box-shadow: 0 0 15px rgba(0, 247, 255, 0.3); }
-
-        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(2, 12, 27, 0.85); backdrop-filter: blur(8px); justify-content: center; align-items: center; }
-        .modal-content { max-width: 90%; max-height: 90%; border: 2px solid #00f7ff; box-shadow: 0 0 40px rgba(0, 247, 255, 0.4); border-radius: 10px; animation: zoomIn 0.3s ease; }
-        .close-modal { position: absolute; top: 20px; right: 40px; color: #00f7ff; font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .close-modal:hover { color: #ff0055; text-shadow: 0 0 15px #ff0055; }
-        @keyframes zoomIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tüm Projeler | ÖMER CAN SARI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E4ECEE;--panel:#F3F7F8;--ink:#0B1F24;--muted:#4C6168;--line:#B7C7CB;--accent:#D9480F;--accent-ink:#FFFFFF;--wave:#0B1F24;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1A1F;--panel:#10272E;--ink:#EFE8D3;--muted:#93ABB1;--line:#24424B;--accent:#FFB547;--accent-ink:#0A1A1F;--wave:#FFB547;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0A1A1F;--panel:#10272E;--ink:#EFE8D3;--muted:#93ABB1;--line:#24424B;--accent:#FFB547;--accent-ink:#0A1A1F;--wave:#FFB547;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 'Instrument Sans',system-ui,sans-serif;transition:background .3s,color .3s}
+h1,h2,h3,.disp{font-family:'Unbounded','Arial Black',sans-serif}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:100vh;max-width:1240px;margin:0 auto}
+aside{position:sticky;top:env(safe-area-inset-top,0px);height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:32px 24px;border-right:1px solid var(--line)}
+.brand{font:800 1.1rem/1.1 'Unbounded',sans-serif;text-decoration:none;display:block;margin-bottom:36px}
+aside nav{display:flex;flex-direction:column;gap:2px}
+aside nav a{text-decoration:none;padding:8px 12px;margin:0 -12px;border-radius:8px;font-weight:500;color:var(--muted)}
+aside nav a:hover,aside nav a.on{color:var(--ink);background:var(--panel)}
+aside nav a.on{box-shadow:inset 3px 0 var(--accent)}
+.theme{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:8px 14px;font:600 .9rem 'Instrument Sans',sans-serif;cursor:pointer;width:100%}
+.theme .knob{width:34px;height:18px;border-radius:99px;background:var(--line);position:relative;flex:none}
+.theme .knob::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--accent);transition:transform .25s}
+:root[data-mode="dark"] .theme .knob::after{transform:translateX(16px)}
+main{min-width:0;width:100%;max-width:980px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:36px;padding:56px 0}
+.hero-top{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.hero-txt{display:flex;flex-direction:column;gap:24px}
+.photo{width:100%;max-width:400px;aspect-ratio:1;object-fit:cover;border-radius:24px;border:1px solid var(--line);justify-self:end;display:block}
+.live{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--muted)}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--accent);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+h1{font-size:clamp(2.2rem,5.4vw,4.2rem);line-height:.95;font-weight:800;letter-spacing:-.04em;margin:0}
+.sub{font:500 1.3rem 'Instrument Sans',sans-serif;color:var(--muted);margin:0}
+.plot{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px 12px}
+.plot svg{display:block;width:100%;height:auto;cursor:crosshair;touch-action:manipulation}
+.plot p{margin:8px 2px 0;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-weight:600;font-size:.9rem;color:var(--muted)}
+.plot button{font:600 .85rem 'Instrument Sans',sans-serif;background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:3px 14px;cursor:pointer}
+.plot button:hover{background:var(--bg)}
+#fit{stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;animation:draw 1.6s .4s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+section{padding:80px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.4rem,3vw,2rem);margin:0 0 36px;font-weight:800;letter-spacing:-.02em}
+.about p{max-width:66ch;margin:0;font-size:1.15rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.chips li{padding:10px 20px;border-radius:10px;background:var(--panel);border:1px solid var(--line);font-weight:600}
+.chips li:hover{border-color:var(--accent)}
+.rows{display:grid;gap:0;margin:0}
+.row{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row:first-child{border-top:1px solid var(--line)}
+.row dt{color:var(--accent);font-weight:600}
+.row dd{margin:0}
+.row b{display:block;font-size:1.15rem;font-weight:600}
+.row span{color:var(--muted)}
+.row ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.row li{margin-bottom:5px}
+.me{display:block;width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);margin:0 0 24px}
+.shot{display:block;width:100%;max-width:320px;height:150px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line);margin-top:18px}
+.grp{font:500 .95rem 'Instrument Sans',sans-serif;color:var(--muted);margin:40px 0 14px}
+.grp:first-of-type{margin-top:0}
+.proj{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;padding:32px 0;border-bottom:1px solid var(--line)}
+.proj:first-of-type{border-top:1px solid var(--line)}
+.proj h3{font-size:clamp(1.5rem,3vw,2.2rem);margin:0 0 12px;font-weight:800;letter-spacing:-.02em}
+.tag{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:.8rem;padding:3px 12px;border-radius:99px}
+.proj p{margin:0 0 14px}
+.tech{color:var(--muted);font-weight:500}
+.btn{display:inline-block;margin-top:32px;background:var(--accent);color:var(--accent-ink);font-weight:600;padding:13px 28px;border-radius:99px;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:none;color:var(--ink);border:1.5px solid var(--ink);margin-top:0}
+.ref{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.ref h3{font-size:1.2rem;margin:0 0 8px}
+.ref p{margin:0}
+.big{font:800 clamp(1.7rem,4.5vw,3.2rem)/1.08 'Unbounded',sans-serif;letter-spacing:-.03em;margin:0 0 32px;max-width:15ch}
+.links{display:flex;gap:12px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:.95rem}
+@media(max-width:860px){
+.layout{grid-template-columns:1fr}
+aside{position:sticky;height:auto;flex-direction:row;align-items:center;gap:12px;padding:10px 16px;border-right:0;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);z-index:5}
+.brand{display:none}
+aside nav{flex-direction:row;overflow-x:auto;flex:1;scrollbar-width:none}
+aside nav a{margin:0;white-space:nowrap;padding:6px 12px}
+.theme{width:auto;padding:8px;flex:none}.theme .lbl{display:none}
+.hero{min-height:auto;padding:40px 0}
+.hero-top{grid-template-columns:1fr}.photo{justify-self:start;max-width:320px}
+.row,.proj{grid-template-columns:1fr;gap:6px}
+}
+@media(prefers-reduced-motion:reduce){#fit{animation:none;stroke-dashoffset:0}.live i{animation:none}html{scroll-behavior:auto}}
+.letter{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.lh{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}.lh h3{margin:0;font-size:1.1rem}
+.letter object{display:block;width:100%;height:640px;border-radius:8px;background:var(--bg)}.letter object p{padding:24px;margin:0}
+.btn.sm{padding:9px 20px;margin-top:0;font-size:.95rem}
+.refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.rc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:4px}
+.rc h3{font-size:1.1rem;margin:0 0 4px}.rc .org{color:var(--muted);margin:0 0 10px}
+.rc a:not(.btn){display:block;color:var(--accent);font-weight:600;text-decoration:none;word-break:break-all}
+.rc a:not(.btn):hover{text-decoration:underline}.rc .btn{align-self:flex-start;margin-top:14px}
+.ph{font:800 clamp(2.2rem,6vw,4.2rem)/1 'Unbounded',sans-serif;letter-spacing:-.04em;margin:0 0 12px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:24px;padding-bottom:40px}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.pcard img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line);display:block;background:var(--bg)}
+.pbody{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pbody h3{font-size:1.4rem;margin:0;font-weight:800;letter-spacing:-.02em}.pbody p{margin:0}
+.pbody .tech{margin-top:auto}.pbody .btn{align-self:flex-start}
+</style>
 </head>
 <body>
-
-    <div id="imageModal" class="modal">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="expandedImg">
-    </div>
-
-    <div class="container">
-        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> ANA SAYFAYA DÖN</a>
-
-        <div class="hud-panel">
-            <h1>>> TÜM PROJELER</h1>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="images/cinescope.png" alt="CineScope" class="project-img">
-                    <div>
-                        <h3>CineScope <span class="badge">YAPAY ZEKA</span></h3>
-                        <p style="color: #fff;">Veri bilimi algoritmaları ve Cosine Similarity kullanarak geliştirilmiş, kullanıcının izleme geçmişine dayalı kişiselleştirilmiş film öneri sistemi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: Python, Pandas, Scikit-Learn</small>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/görüntü.png" alt="Akıllı Gözlük" class="project-img">
-                    <div>
-                        <h3>Akıllı Gözlük <span class="badge">GÖMÜLÜ SİSTEM / CV</span></h3>
-                        <p style="color: #fff;">TinyML tabanlı taşınabilir akıllı gözlük ile gerçek zamanlı engel tespiti ve sesli rehberlik sağlayan donanım ve yazılım projesi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: Raspberry Pi, YOLOv8, Python</small>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/restoran.png" alt="Restoran Yönetim Sistemi" class="project-img">
-                    <div>
-                        <h3>Restoran Yönetimi <span class="badge">C++ / OOP</span></h3>
-                        <p style="color: #fff;">C++ dilini ve Nesne Yönelimli Programlama (OOP) mantığını pekiştirmek amacıyla geliştirdiğim, terminal üzerinden çalışan bir simülasyon. Görsel bir arayüz yerine; sipariş alma, masa takibi ve hesap hesaplama gibi süreçlerin arka plandaki algoritmik akışına odaklandım. Bir İşletmenin veri yönetiminin kod tarafında nasıl işlediğini anlamamı sağlayan temel bir çalışma.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: C++, OOP ve Veri Yapıları</small>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/kutuphane.png" alt="Kütüphane Yönetim Sistemi" class="project-img">
-                    <div>
-                        <h3>Kütüphane Yönetimi <span class="badge">C++ / OOP</span></h3>
-                        <p style="color: #fff;">Veri ekleme, silme ve düzenleme (CRUD) işlemlerinin mantığını kavramak için geliştirdiğim, metin tabanlı bir kütüphane asistanı. Kitap kaydı, ödünç alma ve iade gibi süreçleri yöneten bu projede; verilerin hafızada nasıl tutulduğunu ve işlendiğini deneyimlemeye çalıştım. Grafiksel butonlar olmadan, saf kod mantığıyla çalışan bir yönetim sistemi denemesi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: C++, OOP ve Veri Yapıları</small>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/e-ticaret.png" alt="ETicaretDB" class="project-img">
-                    <div>
-                        <h3>ETicaretDB & Analiz <span class="badge">VERİ TABANI</span></h3>
-                        <p style="color: #fff;">Geniş çaplı bir E-Ticaret platformunun veritabanı mimarisinin oluşturulması ve SQL / Python kütüphaneleri ile satış verilerinin görselleştirilmesi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: PostgreSQL, SQL, Matplotlib</small>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/eticaret_canli.png" alt="E-Ticaret Operasyon Merkezi" class="project-img">
-                    <div>
-                        <h3>E-Ticaret Operasyon Merkezi <span class="badge">CANLI VERİ PİPELİNE</span></h3>
-                        <p style="color: #fff;">Python ve SQLAlchemy (ORM) tabanlı, Türkiye'nin 81 iline yayılan gerçek zamanlı bir satış simülasyonu. Arka planda milisaniyeler içinde sipariş üreten bir bot ile beslenen, Streamlit üzerinden anlık ciro, sipariş yoğunluğu ve ürün hiyerarşisi analizi sunan uçtan uca bir veri pipeline projesi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: Python, SQLite, SQLAlchemy, Streamlit, Plotly</small>
-                </div>
-                <div class="project-card">
-                    <img src="images/autoprice-predictor.png" alt="AutoPrice Predictor" class="project-img">
-                    <div>
-                        <h3>AutoPrice Predictor <span class="badge">VERİ BİLİMİ / ML</span></h3>
-                        <p style="color: #fff;">İkinci el araç piyasası için uçtan uca makine öğrenmesi boru hattı (pipeline). Dinamik web scraping ile toplanan binlerce verinin temizlenerek, Random Forest algoritması ile yüksek doğrulukta fiyat tahmini yapan canlı Streamlit web uygulamasına dönüştürülmesi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: Python, Selenium, Scikit-Learn, Pandas, Streamlit</small>
-                </div>
-                <div class="project-card">
-                    <img src="images/burnout-analysis.png" alt="Athlete Burnout Predictor" class="project-img">
-                    <div>
-                        <h3>Athlete Burnout Predictor <span class="badge">VERİ BİLİMİ / ML</span></h3>
-                        <p style="color: #fff;">Büyük ölçekli telemetri verilerinin SQLite tabanlı ETL süreçlerinden geçirilerek, Random Forest algoritması ile sporcu tükenme anlarının sıfır yanlış alarm (zero false-alarm) payıyla tahmin edilmesi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: Python, Scikit-Learn, SQLite, Pandas, Matplotlib</small>
-                </div>
-                <div class="project-card">
-                    <img src="images/core-agent.png" alt="CORE AGENT" class="project-img">
-                    <div>
-                        <h3>CORE AGENT <span class="badge">LOCAL AI</span></h3>
-                        <p style="color: #fff;">Tamamen yerel bilgisayarda Ollama altyapısıyla çalışan, gizlilik odaklı, terminal estetiğine sahip, modüler ve kişiselleştirilebilir kişisel yapay zeka komuta merkezi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: HTML5, CSS3, Vanilla JS, Ollama API</small>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const modal = document.getElementById("imageModal");
-        const expandedImg = document.getElementById("expandedImg");
-        const images = document.querySelectorAll(".project-img");
-
-        images.forEach(img => {
-            img.onclick = function() {
-                modal.style.display = "flex";
-                expandedImg.src = this.src;
-            }
-        });
-
-        function closeModal() {
-            modal.style.display = "none";
-        }
-
-        modal.onclick = function(e) {
-            if (e.target === modal) {
-                closeModal();
-            }
-        }
-    </script>
-    <script src="asistan.js"></script>
+<div class="layout">
+<aside>
+<div>
+<a class="brand" href="index.html#home">Ö.C.S</a>
+<nav aria-label="Ana menü">
+<a href="index.html#home">Ana sayfa</a><a href="index.html#about">Hakkımda</a><a href="index.html#skills">Yetenekler</a><a href="index.html#resume">Öz geçmiş</a><a href="index.html#projects" class="on">Projeler</a><a href="index.html#references">Referanslar</a><a href="index.html#contact">İletişim</a>
+</nav>
+</div>
+<button class="theme" id="theme" type="button" aria-label="Açık/koyu temayı değiştir"><span class="knob"></span><span class="lbl" id="tlabel">Koyu tema</span></button>
+</aside>
+<main>
+<section style="border-top:0;padding-top:56px"><h1 class="ph">Tüm Projeler</h1><p style="color:var(--muted);margin:0 0 40px">9 proje. Kod için her kartın GitHub bağlantısını kullanabilirsin.</p>
+<div class="pgrid">
+<article class="pcard"><img src="images/core-agent.png" alt="Core Agent" loading="lazy"><div class="pbody"><span class="tag">LOCAL AI</span><h3>Core Agent</h3><p>Tamamen yerel bilgisayarda Ollama altyapısıyla çalışan, gizlilik odaklı, terminal estetiğine sahip, modüler ve kişiselleştirilebilir kişisel yapay zeka komuta merkezi.</p><p class="tech">Teknolojiler: HTML5, CSS3, Vanilla JS, Ollama API</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann/core-agent" target="_blank" rel="noopener">GitHub'da gör</a></div></article>
+<article class="pcard"><img src="images/cinescope.png" alt="CineScope" loading="lazy"><div class="pbody"><span class="tag">YAPAY ZEKA</span><h3>CineScope</h3><p>Veri bilimi algoritmaları ve Cosine Similarity kullanarak geliştirilmiş, kullanıcının izleme geçmişine dayalı kişiselleştirilmiş film öneri sistemi.</p><p class="tech">Teknolojiler: Python, Pandas, Scikit-Learn</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub'da gör</a></div></article>
+<article class="pcard"><img src="images/g%C3%B6r%C3%BCnt%C3%BC.png" alt="Akıllı Gözlük" loading="lazy"><div class="pbody"><span class="tag">GÖMÜLÜ SİSTEM / CV</span><h3>Akıllı Gözlük</h3><p>TinyML tabanlı taşınabilir akıllı gözlük ile gerçek zamanlı engel tespiti ve sesli rehberlik sağlayan donanım ve yazılım projesi.</p><p class="tech">Teknolojiler: Raspberry Pi, YOLOv8, Python</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub'da gör</a></div></article>
+<article class="pcard"><img src="images/restoran.png" alt="Restoran Yönetimi" loading="lazy" style="object-position:center"><div class="pbody"><span class="tag">C++ / OOP</span><h3>Restoran Yönetimi</h3><p>C++ dilini ve Nesne Yönelimli Programlama (OOP) mantığını pekiştirmek amacıyla geliştirdiğim, terminal üzerinden çalışan bir simülasyon. Görsel bir arayüz yerine; sipariş alma, masa takibi ve hesap hesaplama gibi süreçlerin arka plandaki algoritmik akışına odaklandım. Bir İşletmenin veri yönetiminin kod tarafında nasıl işlediğini anlamamı sağlayan temel bir çalışma.</p><p class="tech">Teknolojiler: C++, OOP ve Veri Yapıları</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub'da gör</a></div></article>
+<article class="pcard"><img src="images/kutuphane.png" alt="Kütüphane Yönetimi" loading="lazy" style="object-position:center"><div class="pbody"><span class="tag">C++ / OOP</span><h3>Kütüphane Yönetimi</h3><p>Veri ekleme, silme ve düzenleme (CRUD) işlemlerinin mantığını kavramak için geliştirdiğim, metin tabanlı bir kütüphane asistanı. Kitap kaydı, ödünç alma ve iade gibi süreçleri yöneten bu projede; verilerin hafızada nasıl tutulduğunu ve işlendiğini deneyimlemeye çalıştım. Grafiksel butonlar olmadan, saf kod mantığıyla çalışan bir yönetim sistemi denemesi.</p><p class="tech">Teknolojiler: C++, OOP ve Veri Yapıları</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub'da gör</a></div></article>
+<article class="pcard"><img src="images/e-ticaret.png" alt="ETicaretDB &amp; Analiz" loading="lazy" style="object-fit:contain;background:#fff"><div class="pbody"><span class="tag">VERİ TABANI</span><h3>ETicaretDB &amp; Analiz</h3><p>Geniş çaplı bir E-Ticaret platformunun veritabanı mimarisinin oluşturulması ve SQL / Python kütüphaneleri ile satış verilerinin görselleştirilmesi.</p><p class="tech">Teknolojiler: PostgreSQL, SQL, Matplotlib</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub'da gör</a></div></article>
+<article class="pcard"><img src="images/eticaret_canli.png" alt="E-Ticaret Operasyon Merkezi" loading="lazy"><div class="pbody"><span class="tag">CANLI VERİ PİPELINE</span><h3>E-Ticaret Operasyon Merkezi</h3><p>Python ve SQLAlchemy (ORM) tabanlı, Türkiye'nin 81 iline yayılan gerçek zamanlı bir satış simülasyonu. Arka planda milisaniyeler içinde sipariş üreten bir bot ile beslenen, Streamlit üzerinden anlık ciro, sipariş yoğunluğu ve ürün hiyerarşisi analizi sunan uçtan uca bir veri pipeline projesi.</p><p class="tech">Teknolojiler: Python, SQLite, SQLAlchemy, Streamlit, Plotly</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub'da gör</a></div></article>
+<article class="pcard"><img src="images/autoprice-predictor.png" alt="AutoPrice Predictor" loading="lazy"><div class="pbody"><span class="tag">VERİ BİLİMİ / ML</span><h3>AutoPrice Predictor</h3><p>İkinci el araç piyasası için uçtan uca makine öğrenmesi boru hattı (pipeline). Dinamik web scraping ile toplanan binlerce verinin temizlenerek, Random Forest algoritması ile yüksek doğrulukta fiyat tahmini yapan canlı Streamlit web uygulamasına dönüştürülmesi.</p><p class="tech">Teknolojiler: Python, Selenium, Scikit-Learn, Pandas, Streamlit</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub'da gör</a></div></article>
+<article class="pcard"><img src="images/burnout-analysis.png" alt="Athlete Burnout Predictor" loading="lazy" style="object-position:center"><div class="pbody"><span class="tag">VERİ BİLİMİ / ML</span><h3>Athlete Burnout Predictor</h3><p>Büyük ölçekli telemetri verilerinin SQLite tabanlı ETL süreçlerinden geçirilerek, Random Forest algoritması ile sporcu tükenme anlarının sıfır yanlış alarm (zero false-alarm) payıyla tahmin edilmesi.</p><p class="tech">Teknolojiler: Python, Scikit-Learn, SQLite, Pandas, Matplotlib</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub'da gör</a></div></article>
+</div>
+<a class="btn" href="index.html">Ana sayfaya dön</a></section>
+<footer>© 2026 Ömer Can Sarı - Tüm Hakları Saklıdır.</footer>
+</main>
+</div>
+<script>
+(function(){var root=document.documentElement,mq=window.matchMedia('(prefers-color-scheme: dark)');
+function cur(){return root.getAttribute('data-theme')||(mq.matches?'dark':'light')}
+function sync(){root.setAttribute('data-mode',cur());var l=document.getElementById('tlabel');if(l)l.textContent=cur()==='dark'?'Açık tema':'Koyu tema'}
+try{var s=localStorage.getItem('ocs-theme');if(s==='light'||s==='dark')root.setAttribute('data-theme',s)}catch(e){}
+sync();mq.addEventListener&&mq.addEventListener('change',sync);
+document.getElementById('theme').addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('ocs-theme',n)}catch(e){}sync()});})();
+</script>
 </body>
 </html>

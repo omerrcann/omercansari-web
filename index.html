@@ -1,239 +1,246 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÖMER CAN SARI | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-
-    <style>
-        html { scroll-behavior: smooth; }
-        body { background-color: #020c1b; color: #00f7ff; font-family: 'Orbitron', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
-        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background-color: #020c1b; }
-        nav { background: rgba(2, 12, 27, 0.9); border-bottom: 1px solid #00f7ff; padding: 15px 0; position: sticky; top: 0; z-index: 1000; text-align: center; backdrop-filter: blur(5px); }
-        nav a { color: #00f7ff; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 1em; transition: 0.3s; padding: 10px; }
-        nav a:hover { text-shadow: 0 0 10px #00f7ff; color: #fff; background: rgba(0, 247, 255, 0.1); border-radius: 5px; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; }
-        .hud-panel { border: 1px solid #00f7ff; background: rgba(0, 20, 40, 0.8); padding: 30px; margin-bottom: 40px; box-shadow: 0 0 15px rgba(0, 247, 255, 0.05); position: relative; transform-style: preserve-3d; perspective: 1000px; }
-        .hud-panel::before { content: ''; position: absolute; top: -1px; left: -1px; width: 10px; height: 10px; border-top: 3px solid #00f7ff; border-left: 3px solid #00f7ff; }
-        .hud-panel::after { content: ''; position: absolute; bottom: -1px; right: -1px; width: 10px; height: 10px; border-bottom: 3px solid #00f7ff; border-right: 3px solid #00f7ff; }
-        h2 { border-bottom: 1px dashed #00f7ff; padding-bottom: 10px; color: #00f7ff; margin-top: 0; }
-        header { text-align: center; margin: 50px 0; }
-        h1 { font-size: 3.5em; margin: 0; text-shadow: 0 0 20px #00f7ff; letter-spacing: 2px; }
-        .project-card { background: rgba(0, 20, 40, 0.6); border: 1px solid rgba(0, 247, 255, 0.3); padding: 20px; border-radius: 10px; transform-style: preserve-3d; transform: perspective(1000px); box-shadow: 0 10px 20px rgba(0, 247, 255, 0.1); height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
-        .project-card h3, .project-card p, .project-card small { transform: translateZ(20px); }
-        .badge { background: #00f7ff; color: #000; padding: 2px 8px; font-weight: bold; font-size: 0.8em; margin-left: 10px; border-radius: 4px;}
-        .projects-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
-        @media (max-width: 768px) { .projects-row { grid-template-columns: 1fr; } }
-        .contact-btn { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 2px solid #00f7ff; color: #00f7ff; text-decoration: none; margin: 10px; font-size: 1.5em; transition: all 0.3s ease; background: rgba(0, 20, 40, 0.8); border-radius: 50%; }
-        .contact-btn:hover { transform: translateY(-5px) scale(1.1); color: #fff; box-shadow: 0 0 20px #00f7ff; background: #00f7ff; }
-        .chart-container { position: relative; height: 350px; width: 100%; max-width: 600px; margin: 0 auto; }
-
-        /* ÖZGEÇMİŞ TIMELINE CSS */
-        .timeline-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
-        @media (max-width: 768px) { .timeline-container { grid-template-columns: 1fr; gap: 20px; } }
-        .timeline-section h3 { color: #fff; border-bottom: 1px solid rgba(0, 247, 255, 0.3); padding-bottom: 10px; margin-top: 0; }
-        .timeline-item { border-left: 2px solid rgba(0, 247, 255, 0.5); padding-left: 20px; margin-bottom: 25px; position: relative; transition: 0.3s; }
-        .timeline-item:hover { border-left-color: #00f7ff; }
-        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 0; width: 10px; height: 10px; background: #020c1b; border: 2px solid #00f7ff; border-radius: 50%; transition: 0.3s; }
-        .timeline-item:hover::before { background: #00f7ff; box-shadow: 0 0 10px #00f7ff; }
-        .timeline-item h4 { margin: 0; color: #00f7ff; font-size: 1.1em; }
-        .timeline-item .role { color: #fff; font-size: 0.95em; margin: 5px 0; font-family: 'Roboto', sans-serif; }
-        .timeline-item .date { color: rgba(0,247,255,0.6); font-size: 0.85em; font-family: 'Roboto', sans-serif; font-weight: bold; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ÖMER CAN SARI | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E4ECEE;--panel:#F3F7F8;--ink:#0B1F24;--muted:#4C6168;--line:#B7C7CB;--accent:#D9480F;--accent-ink:#FFFFFF;--wave:#0B1F24;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1A1F;--panel:#10272E;--ink:#EFE8D3;--muted:#93ABB1;--line:#24424B;--accent:#FFB547;--accent-ink:#0A1A1F;--wave:#FFB547;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0A1A1F;--panel:#10272E;--ink:#EFE8D3;--muted:#93ABB1;--line:#24424B;--accent:#FFB547;--accent-ink:#0A1A1F;--wave:#FFB547;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 'Instrument Sans',system-ui,sans-serif;transition:background .3s,color .3s}
+h1,h2,h3,.disp{font-family:'Unbounded','Arial Black',sans-serif}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:100vh;max-width:1240px;margin:0 auto}
+aside{position:sticky;top:env(safe-area-inset-top,0px);height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:32px 24px;border-right:1px solid var(--line)}
+.brand{font:800 1.1rem/1.1 'Unbounded',sans-serif;text-decoration:none;display:block;margin-bottom:36px}
+aside nav{display:flex;flex-direction:column;gap:2px}
+aside nav a{text-decoration:none;padding:8px 12px;margin:0 -12px;border-radius:8px;font-weight:500;color:var(--muted)}
+aside nav a:hover,aside nav a.on{color:var(--ink);background:var(--panel)}
+aside nav a.on{box-shadow:inset 3px 0 var(--accent)}
+.theme{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:8px 14px;font:600 .9rem 'Instrument Sans',sans-serif;cursor:pointer;width:100%}
+.theme .knob{width:34px;height:18px;border-radius:99px;background:var(--line);position:relative;flex:none}
+.theme .knob::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--accent);transition:transform .25s}
+:root[data-mode="dark"] .theme .knob::after{transform:translateX(16px)}
+main{min-width:0;width:100%;max-width:980px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:36px;padding:56px 0}
+.hero-top{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.hero-txt{display:flex;flex-direction:column;gap:24px}
+.photo{width:100%;max-width:400px;aspect-ratio:1;object-fit:cover;border-radius:24px;border:1px solid var(--line);justify-self:end;display:block}
+.live{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--muted)}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--accent);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+h1{font-size:clamp(2.2rem,5.4vw,4.2rem);line-height:.95;font-weight:800;letter-spacing:-.04em;margin:0}
+.sub{font:500 1.3rem 'Instrument Sans',sans-serif;color:var(--muted);margin:0}
+.plot{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px 12px}
+.plot svg{display:block;width:100%;height:auto;cursor:crosshair;touch-action:manipulation}
+.plot p{margin:8px 2px 0;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-weight:600;font-size:.9rem;color:var(--muted)}
+.plot button{font:600 .85rem 'Instrument Sans',sans-serif;background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:3px 14px;cursor:pointer}
+.plot button:hover{background:var(--bg)}
+#fit{stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;animation:draw 1.6s .4s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+section{padding:80px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.4rem,3vw,2rem);margin:0 0 36px;font-weight:800;letter-spacing:-.02em}
+.about p{max-width:66ch;margin:0;font-size:1.15rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.chips li{padding:10px 20px;border-radius:10px;background:var(--panel);border:1px solid var(--line);font-weight:600}
+.chips li:hover{border-color:var(--accent)}
+.rows{display:grid;gap:0;margin:0}
+.row{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row:first-child{border-top:1px solid var(--line)}
+.row dt{color:var(--accent);font-weight:600}
+.row dd{margin:0}
+.row b{display:block;font-size:1.15rem;font-weight:600}
+.row span{color:var(--muted)}
+.row ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.row li{margin-bottom:5px}
+.me{display:block;width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);margin:0 0 24px}
+.shot{display:block;width:100%;max-width:320px;height:150px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line);margin-top:18px}
+.grp{font:500 .95rem 'Instrument Sans',sans-serif;color:var(--muted);margin:40px 0 14px}
+.grp:first-of-type{margin-top:0}
+.proj{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;padding:32px 0;border-bottom:1px solid var(--line)}
+.proj:first-of-type{border-top:1px solid var(--line)}
+.proj h3{font-size:clamp(1.5rem,3vw,2.2rem);margin:0 0 12px;font-weight:800;letter-spacing:-.02em}
+.tag{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:.8rem;padding:3px 12px;border-radius:99px}
+.proj p{margin:0 0 14px}
+.tech{color:var(--muted);font-weight:500}
+.btn{display:inline-block;margin-top:32px;background:var(--accent);color:var(--accent-ink);font-weight:600;padding:13px 28px;border-radius:99px;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:none;color:var(--ink);border:1.5px solid var(--ink);margin-top:0}
+.ref{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.ref h3{font-size:1.2rem;margin:0 0 8px}
+.ref p{margin:0}
+.big{font:800 clamp(1.7rem,4.5vw,3.2rem)/1.08 'Unbounded',sans-serif;letter-spacing:-.03em;margin:0 0 32px;max-width:15ch}
+.links{display:flex;gap:12px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:.95rem}
+@media(max-width:860px){
+.layout{grid-template-columns:1fr}
+aside{position:sticky;height:auto;flex-direction:row;align-items:center;gap:12px;padding:10px 16px;border-right:0;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);z-index:5}
+.brand{display:none}
+aside nav{flex-direction:row;overflow-x:auto;flex:1;scrollbar-width:none}
+aside nav a{margin:0;white-space:nowrap;padding:6px 12px}
+.theme{width:auto;padding:8px;flex:none}.theme .lbl{display:none}
+.hero{min-height:auto;padding:40px 0}
+.hero-top{grid-template-columns:1fr}.photo{justify-self:start;max-width:320px}
+.row,.proj{grid-template-columns:1fr;gap:6px}
+}
+@media(prefers-reduced-motion:reduce){#fit{animation:none;stroke-dashoffset:0}.live i{animation:none}html{scroll-behavior:auto}}
+.letter{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.lh{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}.lh h3{margin:0;font-size:1.1rem}
+.letter object{display:block;width:100%;height:640px;border-radius:8px;background:var(--bg)}.letter object p{padding:24px;margin:0}
+.btn.sm{padding:9px 20px;margin-top:0;font-size:.95rem}
+.refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.rc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:4px}
+.rc h3{font-size:1.1rem;margin:0 0 4px}.rc .org{color:var(--muted);margin:0 0 10px}
+.rc a:not(.btn){display:block;color:var(--accent);font-weight:600;text-decoration:none;word-break:break-all}
+.rc a:not(.btn):hover{text-decoration:underline}.rc .btn{align-self:flex-start;margin-top:14px}
+.ph{font:800 clamp(2.2rem,6vw,4.2rem)/1 'Unbounded',sans-serif;letter-spacing:-.04em;margin:0 0 12px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:24px;padding-bottom:40px}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.pcard img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line);display:block;background:var(--bg)}
+.pbody{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pbody h3{font-size:1.4rem;margin:0;font-weight:800;letter-spacing:-.02em}.pbody p{margin:0}
+.pbody .tech{margin-top:auto}.pbody .btn{align-self:flex-start}
+</style>
 </head>
 <body>
+<div class="layout">
+<aside>
+<div>
+<a class="brand" href="#home">Ö.C.S</a>
+<nav aria-label="Ana menü">
+<a href="#home">Ana sayfa</a><a href="#about">Hakkımda</a><a href="#skills">Yetenekler</a><a href="#resume">Öz geçmiş</a><a href="#projects">Projeler</a><a href="#references">Referanslar</a><a href="#contact">İletişim</a>
+</nav>
+</div>
+<button class="theme" id="theme" type="button" aria-label="Açık/koyu temayı değiştir"><span class="knob"></span><span class="lbl" id="tlabel">Koyu tema</span></button>
+</aside>
 
-    <div id="particles-js"></div>
+<main>
+<div class="hero" id="home">
+<div class="hero-top">
+<div class="hero-txt">
+<p class="live"><i></i>SYSTEM STATUS: ONLINE</p>
+<h1>ÖMER<br>CAN SARI</h1>
+<p class="sub">İstatistik &amp; Bilgisayar Bilimleri</p>
+</div>
+<img class="photo" src="images/profil.jpg" alt="Ömer Can Sarı" onerror="this.remove()">
+</div>
+<div class="plot">
+<svg id="chart" viewBox="0 0 600 240" role="img" aria-label="Noktalara uyan regresyon doğrusu. Yeni nokta eklemek için tıklayın."></svg>
+<p><span id="eq">y = ax + b</span><button id="reset" type="button">Sıfırla</button></p>
+</div>
+</div>
 
-    <nav>
-        <a href="#home">ANA SAYFA</a>
-        <a href="#about">HAKKIMDA</a>
-        <a href="#skills">YETENEKLER</a>
-        <a href="#resume">ÖZ GEÇMİŞ</a>
-        <a href="#projects">PROJELER</a>
-        <a href="#references">REFERANSLAR</a>
-        <a href="#contact">İLETİŞİM</a>
-    </nav>
+<section id="about" class="about">
+<h2>Hakkımda</h2>
+<p>Selamlar, ben Ömer Can Sarı. Teknolojinin sadece kullanıcısı olmakla yetinmeyip, arka plandaki çalışma mantığını öğrenmeye çalışan bir öğrenciyim. Şu anki temel amacım, yazılım geliştirme ve veri bilimi dünyasını tanımak. Henüz her şeyin başındayım ve karmaşık tanımlar yerine, işin temel mantığını kavramaya öncelik veriyorum. Özellikle büyük veri yığınlarının nasıl anlamlı bilgilere dönüştüğü konusu üzerine okumalar yapıyor ve denemelerle öğrenmeye çalışıyorum. Burada sektör standartlarında profesyonel işler veya kusursuz analizler görmeyi beklemeyin. Paylaştığım projeler, okulda öğrendiğim teorik bilgileri kendi çabamla pratiğe dökmeye çalıştığım kişisel notlarımdır. Eksiklerimle ama en çok da öğrenme isteğimle buradayım.</p>
+</section>
 
-    <div class="container" id="home">
+<section id="skills">
+<h2>Yetenekler</h2>
+<p class="grp">Teknik</p><ul class="chips"><li>Python</li><li>SQL</li><li>C++</li><li>R</li><li>SPSS</li><li>Veri &amp; İstatistiksel Analiz</li><li>Git &amp; GitHub</li><li>MS Office</li><li>Django &amp; Web Geliştirme</li><li>Makine Öğrenmesi</li><li>Görüntü İşleme &amp; Edge AI</li></ul><p class="grp">Kişisel</p><ul class="chips"><li>Analitik Düşünme</li><li>Problem Çözme</li><li>Takım Çalışması</li></ul>
+</section>
 
-        <header>
-            <div style="color: #0f0; font-size: 0.9em; margin-bottom: 15px;">SYSTEM STATUS: ONLINE</div>
+<section id="resume">
+<h2>Eğitim &amp; Deneyim</h2>
+<p class="grp">Eğitim</p>
+<dl class="rows">
+<div class="row"><dt>2022 - 2026</dt><dd><b>Karadeniz Teknik Üniversitesi</b><span>İstatistik ve Bilgisayar Bilimleri (Lisans)</span></dd></div>
+<div class="row"><dt>2018 - 2020</dt><dd><b>Hazar Koleji Anadolu Lisesi</b><span>Lise Eğitimi</span></dd></div>
+<div class="row"><dt>2016 - 2018</dt><dd><b>Bahçeşehir Atatürk Anadolu Lisesi</b><span>Lise Eğitimi</span></dd></div>
+</dl>
+<p class="grp">Deneyim</p>
+<dl class="rows">
+<div class="row"><dt>2026 - Devam Ediyor</dt><dd><b>Software &amp; AI Engineering Intern</b><span>Revor Tech</span><ul><li>Yazılım geliştirme süreçlerine doğrudan teknik destek sağlandı.</li><li>Şirketin yazılım çözümlerinin potansiyel müşterilere tanıtılması, teknik demoların gerçekleştirilmesi ve B2B satış operasyonlarının uçtan uca yürütülmesinde aktif rol alındı.</li></ul></dd></div>
+<div class="row"><dt>Kasım 2025 - Haziran 2026</dt><dd><b>Öğrenci Asistan (IT Destek Elemanı)</b><span>Karadeniz Teknik Üniversitesi (İŞKUR)</span><ul><li>Akademik ve idari personelin donanım, yazılım ve ağ altyapısı sorunlarına proaktif teknik destek sağlandı.</li><li>Sistemlerde meydana gelen arızalar hızlıca tespit edilip, eğitim operasyonlarının kesintisiz devam etmesi güvence altına alındı.</li></ul></dd></div>
+<div class="row"><dt>Ağustos 2025</dt><dd><b>Bilgi Teknolojileri Stajyeri</b><span>TNCGROUP</span><ul><li>Python kullanılarak şirket verilerinin işlenmesi, analiz edilmesi ve makine öğrenmesi modellemeleri için hazırlanması süreçlerinde görev alındı.</li><li>Veri odaklı karar mekanizmaları için otomatik raporlama sistemleri geliştirildi ve yazılım ekibinin veri bilimi tabanlı teknik operasyonlarına destek sağlandı.</li></ul></dd></div>
+</dl>
+</section>
 
-            <div style="margin-bottom: 20px;">
-                <img src="images/profil.png" alt="Ömer Can Sarı" style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid #00f7ff; box-shadow: 0 0 20px rgba(0, 247, 255, 0.5); object-fit: cover;">
-            </div>
+<section id="projects">
+<h2>Öne Çıkan Projeler</h2>
+<article class="proj">
+<div><span class="tag">YAPAY ZEKA</span><h3 style="margin-top:14px">CineScope</h3><img class="shot" src="images/cinescope.png" alt="CineScope" onerror="this.remove()"></div>
+<div><p>Veri bilimi algoritmaları ve Cosine Similarity kullanarak geliştirilmiş, kullanıcının izleme geçmişine dayalı kişiselleştirilmiş film öneri sistemi.</p><p class="tech">Teknolojiler: Python, Pandas, Scikit-Learn</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub</a></div>
+</article>
+<article class="proj">
+<div><span class="tag">GÖMÜLÜ SİSTEM / CV</span><h3 style="margin-top:14px">Akıllı Gözlük</h3><img class="shot" src="images/g%C3%B6r%C3%BCnt%C3%BC.png" alt="Akıllı Gözlük" onerror="this.remove()"></div>
+<div><p>TinyML tabanlı taşınabilir akıllı gözlük ile gerçek zamanlı engel tespiti ve sesli rehberlik sağlayan donanım ve yazılım projesi.</p><p class="tech">Teknolojiler: Raspberry Pi, YOLOv8, Python</p><!-- GITHUB: repo adresini href içine yaz --><a class="btn ghost sm" href="https://github.com/omerrcann?tab=repositories" target="_blank" rel="noopener">GitHub</a></div>
+</article>
+<a class="btn" href="projeler.html">Tüm projeleri gör</a>
+</section>
 
-            <h1>ÖMER CAN SARI</h1>
-            <div style="font-size: 1.2em; opacity: 0.8; letter-spacing: 4px;">İSTATİSTİK & BİLGİSAYAR BİLİMLERİ</div>
-        </header>
+<section id="references">
+<h2>Referanslar</h2>
+<div class="refs">
+<div class="rc"><h3>Zekiye İrem Akıcı</h3><p class="org">Markalar Genel Koor. | TNCGROUP</p><a href="mailto:iremakici@tncgroup.info">iremakici@tncgroup.info</a></div>
+<div class="rc"><h3>Dr. Öğr. Üyesi Özge Tezel</h3><p class="org">Akademisyen | KTÜ</p><a href="tel:+905344481364">0534 448 1364</a><a href="mailto:ozgetezel@ktu.edu.tr">ozgetezel@ktu.edu.tr</a></div>
+<div class="rc"><h3>Dr. Öğr. Üyesi Eda Özkul</h3><p class="org">Akademisyen | KTÜ</p><a href="tel:+905362856245">0536 285 62 45</a><a href="mailto:edaozkul@ktu.edu.tr">edaozkul@ktu.edu.tr</a></div>
+</div>
+<div class="letter"><div class="lh"><h3>Referans Mektubu</h3><a class="btn ghost sm" href="documents/tnc_referans.pdf" target="_blank" rel="noopener">Yeni sekmede aç</a></div>
+<object data="documents/tnc_referans.pdf#view=FitH" type="application/pdf"><p>Mektup bu tarayıcıda sayfa içinde gösterilemiyor. <a href="documents/tnc_referans.pdf" target="_blank" rel="noopener">PDF'i aç</a></p></object></div>
+</section>
 
-        <section id="about" class="hud-panel">
-            <h2>>> HAKKIMDA </h2>
-            <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                <div>
-                    <p style="line-height: 1.6; font-size: 1.1em; color: #fff;">
-                        Selamlar, ben Ömer Can Sarı. Teknolojinin sadece kullanıcısı olmakla yetinmeyip, arka plandaki çalışma mantığını öğrenmeye çalışan bir öğrenciyim. Şu anki temel amacım, yazılım geliştirme ve veri bilimi dünyasını tanımak. Henüz her şeyin başındayım ve karmaşık tanımlar yerine, işin temel mantığını kavramaya öncelik veriyorum.
-Özellikle büyük veri yığınlarının nasıl anlamlı bilgilere dönüştüğü konusu üzerine okumalar yapıyor ve denemelerle öğrenmeye çalışıyorum. Burada sektör standartlarında profesyonel işler veya kusursuz analizler görmeyi beklemeyin. Paylaştığım projeler, okulda öğrendiğim teorik bilgileri kendi çabamla pratiğe dökmeye çalıştığım kişisel notlarımdır. Eksiklerimle ama en çok da öğrenme isteğimle buradayım.
-                    </p>
-                </div>
-            </div>
-        </section>
+<section id="contact">
+<h2>İletişim</h2>
+<p class="big">Frekansları açtım, sinyal bekliyorum.</p>
+<div class="links">
+<a class="btn" style="margin-top:0" href="mailto:sarmercan6@gmail.com" title="E-Posta Gönder">E-Posta</a>
+<a class="btn ghost" href="https://www.linkedin.com/in/ömercan28" title="LinkedIn Profili">LinkedIn</a>
+<a class="btn ghost" href="https://github.com/omerrcann" title="GitHub Profili">GitHub</a>
+</div>
+</section>
+<footer>© 2026 Ömer Can Sarı - Tüm Hakları Saklıdır.</footer>
+</main>
+</div>
 
-        <section id="skills" class="hud-panel" style="text-align: center;">
-            <h2>>> YETENEKLER</h2>
-            <div class="chart-container">
-                <canvas id="skillRadar"></canvas>
-            </div>
-        </section>
+<script>
+(function(){
+var root=document.documentElement,btn=document.getElementById('theme'),lbl=document.getElementById('tlabel');
+var mq=window.matchMedia('(prefers-color-scheme: dark)');
+function current(){var t=root.getAttribute('data-theme');return t||(mq.matches?'dark':'light')}
+function sync(){var m=current();root.setAttribute('data-mode',m);lbl.textContent=m==='dark'?'Açık tema':'Koyu tema'}
+try{var s=localStorage.getItem('ocs-theme');if(s==='light'||s==='dark')root.setAttribute('data-theme',s)}catch(e){}
+sync();mq.addEventListener&&mq.addEventListener('change',sync);
+btn.addEventListener('click',function(){var n=current()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('ocs-theme',n)}catch(e){}sync()});
 
-        <section id="resume" class="hud-panel">
-            <h2>>> EĞİTİM & DENEYİM</h2>
-            <div class="timeline-container">
+var svg=document.getElementById('chart'),eq=document.getElementById('eq'),NS='http://www.w3.org/2000/svg';
+var W=600,H=240,P=28,pts=[];
+function seed(){pts=[];var s=7;function r(){s=(s*9301+49297)%233280;return s/233280}
+for(var i=0;i<22;i++){var x=0.06+i*0.04+(r()-.5)*.03;pts.push([x,Math.min(.97,Math.max(.03,.15+x*.72+(r()-.5)*.28))])}}
+function sx(x){return P+x*(W-2*P)}function sy(y){return H-P-y*(H-2*P)}
+function fit(){var n=pts.length,mx=0,my=0;pts.forEach(function(p){mx+=p[0];my+=p[1]});mx/=n;my/=n;
+var a=0,b=0;pts.forEach(function(p){a+=(p[0]-mx)*(p[1]-my);b+=(p[0]-mx)*(p[0]-mx)});var m=b?a/b:0;return[m,my-m*mx]}
+function el(t,at){var e=document.createElementNS(NS,t);for(var k in at)e.setAttribute(k,at[k]);return e}
+function draw(first){
+svg.innerHTML='';
+for(var i=0;i<=4;i++){var g=P+i*(W-2*P)/4,h=P+i*(H-2*P)/4;
+svg.appendChild(el('line',{x1:g,y1:P,x2:g,y2:H-P,stroke:'var(--line)','stroke-width':1}));
+svg.appendChild(el('line',{x1:P,y1:h,x2:W-P,y2:h,stroke:'var(--line)','stroke-width':1}))}
+svg.appendChild(el('line',{x1:P,y1:H-P,x2:W-P,y2:H-P,stroke:'var(--ink)','stroke-width':2}));
+svg.appendChild(el('line',{x1:P,y1:P,x2:P,y2:H-P,stroke:'var(--ink)','stroke-width':2}));
+var f=fit(),m=f[0],c=f[1];
+var ln=el('line',{x1:sx(0),y1:sy(c),x2:sx(1),y2:sy(m+c),id:'fit'});
+if(!first){ln.style.animation='none';ln.style.strokeDashoffset=0}
+svg.appendChild(ln);
+pts.forEach(function(p,i){svg.appendChild(el('circle',{cx:sx(p[0]),cy:sy(p[1]),r:i>=22?6:4.5,fill:i>=22?'#F4B400':'var(--ink)',stroke:'var(--panel)','stroke-width':1.5}))});
+eq.textContent='y = '+m.toFixed(2)+'x '+(c<0?'− ':'+ ')+Math.abs(c).toFixed(2)+'   ·   n = '+pts.length}
+svg.addEventListener('click',function(e){var r=svg.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*W,y=(e.clientY-r.top)/r.height*H;
+var px=(x-P)/(W-2*P),py=(H-P-y)/(H-2*P);if(px<0||px>1||py<0||py>1)return;pts.push([px,py]);draw(false)});
+document.getElementById('reset').addEventListener('click',function(){seed();draw(false)});
+seed();draw(true);
 
-                <div class="timeline-section">
-                    <h3><i class="fas fa-graduation-cap" style="color: #00f7ff; margin-right: 10px;"></i>EĞİTİM</h3>
-
-                    <div class="timeline-item">
-                        <h4>Karadeniz Teknik Üniversitesi</h4>
-                        <div class="role">İstatistik ve Bilgisayar Bilimleri (Lisans)</div>
-                        <div class="date"><i class="far fa-calendar-alt"></i> 2022 - 2026</div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h4>Hazar Koleji Anadolu Lisesi</h4>
-                        <div class="role">Lise Eğitimi</div>
-                        <div class="date"><i class="far fa-calendar-alt"></i> 2018 - 2020</div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h4>Bahçeşehir Atatürk Anadolu Lisesi</h4>
-                        <div class="role">Lise Eğitimi</div>
-                        <div class="date"><i class="far fa-calendar-alt"></i> 2016 - 2018</div>
-                    </div>
-                </div>
-
-                <div class="timeline-section">
-                    <h3><i class="fas fa-briefcase" style="color: #00f7ff; margin-right: 10px;"></i>DENEYİM</h3>
-
-                    <div class="timeline-item">
-                        <h4>Öğrenci Asistan (İŞKUR Gençlik Programı)</h4>
-                        <div class="role">Karadeniz Teknik Üniversitesi</div>
-                        <div class="date"><i class="far fa-calendar-alt"></i> 2025 Kasım - 2026 Haziran </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h4>Bilgi Teknolojileri Stajyeri</h4>
-                        <div class="role">TNCGROUP</div>
-                        <div class="date"><i class="far fa-calendar-alt"></i> 2025 - Ağustos</div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <main id="projects" class="hud-panel">
-            <h2 style="color:#00f7ff; border-bottom: 1px dashed #00f7ff; padding-bottom:10px;">>> ÖNE ÇIKAN PROJELER </h2>
-
-            <div class="projects-row">
-                <div class="project-card">
-                    <img src="images/cinescope.png" alt="CineScope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; border: 1px solid rgba(0,247,255,0.3);">
-                    <div>
-                        <h3>CineScope <span class="badge">YAPAY ZEKA</span></h3>
-                        <p style="color: #fff;">Veri bilimi algoritmaları ve Cosine Similarity kullanarak geliştirilmiş, kullanıcının izleme geçmişine dayalı kişiselleştirilmiş film öneri sistemi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: Python, Pandas, Scikit-Learn</small>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/görüntü.png" alt="Akıllı Gözlük" style="width: 100%; height: 180px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; border: 1px solid rgba(0,247,255,0.3);">
-                    <div>
-                        <h3>Akıllı Gözlük <span class="badge">GÖMÜLÜ SİSTEM / CV</span></h3>
-                        <p style="color: #fff;">TinyML tabanlı taşınabilir akıllı gözlük ile gerçek zamanlı engel tespiti ve sesli rehberlik sağlayan donanım ve yazılım projesi.</p>
-                    </div>
-                    <small style="color: rgba(0,247,255,0.6); margin-top: 15px; display:block;">Teknolojiler: Raspberry Pi, YOLOv8, Python</small>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="projeler.html" target="_blank" style="display: inline-block; padding: 12px 25px; background: rgba(0, 247, 255, 0.1); border: 1px solid #00f7ff; color: #00f7ff; text-decoration: none; font-weight: bold; font-size: 1.1em; border-radius: 5px; transition: 0.3s; letter-spacing: 1px; box-shadow: 0 0 10px rgba(0,247,255,0.2);">>> TÜM PROJELERİ GÖR</a>
-            </div>
-        </main>
-
-        <section id="references" class="hud-panel">
-            <h2>>> REFERANSLAR</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
-                <div class="ref-card" style="flex: 1; min-width: 300px; background: rgba(0, 247, 255, 0.02); border: 1px dashed #00f7ff; padding: 20px; border-radius: 5px; display: flex; align-items: center; gap: 20px; transition: 0.3s;" onmouseover="this.style.background='rgba(0, 247, 255, 0.1)'; this.style.boxShadow='0 0 15px rgba(0, 247, 255, 0.2)'" onmouseout="this.style.background='rgba(0, 247, 255, 0.02)'; this.style.boxShadow='none'">
-                    <div style="font-size: 2.5em; color: #ff0055;"><i class="fas fa-file-pdf"></i></div>
-                    <div style="flex: 1;">
-                        <h3 style="margin: 0; font-size: 1.2em; color: #fff;">Referans Mektubu</h3>
-                        <div style="margin-top: 8px;">
-                            <strong style="color: #00f7ff; display: block; font-size: 1em;">İrem AKICI</strong>
-                            <span style="color: rgba(255,255,255,0.7); font-size: 0.85em; display: block;">Markalar Genel Koordinatörü</span>
-                            <span style="color: rgba(255,255,255,0.5); font-size: 0.8em; font-style: italic;">TNC GROUP</span>
-                        </div>
-                        <div style="margin-top: 5px; font-size: 0.8em; color: #00f7ff; opacity: 0.8;"><i class="fas fa-envelope"></i> iremakici@tncgroup.info</div>
-                    </div>
-                    <a href="documents/tnc_referans.pdf" target="_blank" style="text-decoration: none; color: #00f7ff; border: 1px solid #00f7ff; padding: 10px 20px; border-radius: 5px; font-size: 0.9em; font-weight: bold; white-space: nowrap;"><i class="fas fa-eye"></i> GÖRÜNTÜLE</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="hud-panel" style="text-align: center;">
-            <h2>>> İLETİŞİM</h2>
-            <p style="margin-bottom: 20px;">Frekansları açtım, sinyal bekliyorum.</p>
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
-                <a href="mailto:sarmercan6@gmail.com" class="contact-btn" title="E-Posta Gönder"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/ömercan28" target="_blank" class="contact-btn" title="LinkedIn Profili"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/omerrcann" target="_blank" class="contact-btn" title="GitHub Profili"><i class="fab fa-github"></i></a>
-            </div>
-        </section>
-
-        <footer style="text-align: center; opacity: 0.5; font-size: 0.8em; margin-top: 50px;">
-           © 2026 Ömer Can Sarı - Tüm Hakları Saklıdır.
-        </footer>
-    </div>
-
-    <script>
-        const labels = ["Python", "Django / Backend", "Data Science (Pandas)", "SQL / PostgreSQL", "Git / GitHub", "C++"];
-        const dataPoints = [85, 70, 70, 80, 75, 65];
-
-        const ctx = document.getElementById('skillRadar').getContext('2d');
-        let gradient = ctx.createRadialGradient(300, 300, 10, 300, 300, 300);
-        gradient.addColorStop(0, 'rgba(0, 247, 255, 0.4)');
-        gradient.addColorStop(1, 'rgba(0, 247, 255, 0.05)');
-
-        new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Yetenek Seviyesi', data: dataPoints, backgroundColor: gradient,
-                    borderColor: '#00f7ff', borderWidth: 2, pointBackgroundColor: '#020c1b',
-                    pointBorderColor: '#00f7ff', pointBorderWidth: 2, pointRadius: 4, pointHoverRadius: 6
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: { r: { angleLines: { color: 'rgba(0, 247, 255, 0.2)' }, grid: { color: 'rgba(0, 247, 255, 0.1)' }, pointLabels: { color: '#00f7ff', font: { size: 14, family: 'Orbitron', weight: 'bold' } }, ticks: { display: false, backdropColor: 'transparent', maxTicksLimit: 5 }, suggestedMin: 0, suggestedMax: 100 } },
-                plugins: { legend: { display: false } }
-            }
-        });
-
-        particlesJS("particles-js", {
-            "particles": { "number": { "value": 80 }, "color": { "value": "#00f7ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#00f7ff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 4, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false } },
-            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "repulse": { "distance": 100, "duration": 0.4 } } }, "retina_detect": true
-        });
-
-        VanillaTilt.init(document.querySelectorAll(".project-card"), { max: 15, speed: 400, glare: true, "max-glare": 0.3, scale: 1.02 });
-    </script>
-
-    <script src="asistan.js"></script>
+var links=[].slice.call(document.querySelectorAll('aside nav a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function spy(){var y=window.scrollY+window.innerHeight*.35,i=0;secs.forEach(function(s,k){if(s.offsetTop<=y)i=k});links.forEach(function(a,k){a.classList.toggle('on',k===i)})}
+window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+</script>
 </body>
 </html>
